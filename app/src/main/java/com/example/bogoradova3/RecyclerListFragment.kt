@@ -53,7 +53,7 @@ class RecyclerListFragment : Fragment() {
     private fun initViewModel() {
 
         val viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
-        viewModel.getRecyclerListObserver().observe(viewLifecycleOwner, Observer<RecyclerList> {
+        viewModel.getRecyclerListObserver().observe(this, Observer<RecyclerList> {
 
             if(it != null) {
                     recyclerAdapter.setUpdatedData(it.items)
